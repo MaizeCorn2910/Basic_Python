@@ -268,6 +268,39 @@ def calc():
     else:
         print("Please understand that this calculator only does +-*/ :)")
 calc()
+bruce=5
+print(bruce) #5
+bruce=7
+print(bruce)#7
+
+a=3  #Assigns 3 to variable a
+b=a #Assigns the value of a, i.e. 3 to b
+b=5 #Now b is assigned 5 instead of 3  
+#while statement is an alternative to a recursive function.
+#Countdown:
+i=int(input("Please enter a number"))
+while i>0:
+    print(i) #command
+    i=i-1  #Reduce value by 1 in the next loop
+print("Blastoff")#Not part of while code
+#Compare with recursion: def countdown(n):
+                       #      if n==0:
+                       #        print("Blastoff!")
+                       #      else: 
+                       #        print(n)
+                       #        countdown(n-1)
+#Try writing a while statement for newline()
+#Famous 3n+1 problem:
+def prob():
+    n=int(input("Please enter a number\n"))
+    while n!=1:
+        print(n)
+        if n%2==0:
+            n=n//2
+        else:
+            n=3*n+1
+prob()
+print(1)
 
     
 
