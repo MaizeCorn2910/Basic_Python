@@ -1,0 +1,279 @@
+#This is where to see for basics from the start. def_word is the definition of the word. word_fn is the meaning of the word function.
+#def_Value:A piece of information. There are 4 types: int, str, float, boolean
+    #1)int:Normal integers like 1,2,3,-2, and so on
+    #2)str:Any text enclosed within "___" is a string. Even "7" is a string
+    #3)float:Any number with decimal digits. Even 4.0 is a float value.
+    #4)boolean: True and False (with capital 'T' and 'F') are boolean values, see their use and meaning later.
+#def_Variable: Same meaning as in mathematics. It is used as a name, a kind of box to store pieces of information, i.e. values.
+#Things to note while naming a variable:1)Always start with an alphabet. It is conventional to use all lowercase letters, like bruce instead of Bruce.
+                                       #2)Only _(Underscore) symbol is allowed in a variable's name.
+                                       #3)There are special words("Keywords") in Python which have a predefined meaning. You cannot use them to name a variable.
+                                       #4)Remember that bruce and Bruce and bRuce are all different names.
+#def_Operator: Arithmetic operators from mathematics. 
+#def_Operand: The values/variables on which the operator operates are the operands.
+#x+y for addition, x-y for subtraction, x*y for multiplication, x/y for division, x//y for floor division(division with integral operands and baccho wala division with quotient and remainder as opposed to complete division with decimal values.)
+#x%y (Modulus operator:Divides x by y and spews the remainder as a n output.)
+#x>y, x<y, x>=y, x>=y have their usual meanings. x==y implies 'x is equal to y', and x!=y implies 'x is not equal to y'. These are not technically operators, but come in the same intuitive category.
+#def_function: Does some tasks with rules prespecified. Maybe taking an input and spewing an output, maybe no inputs are required. The first sentence of the def is what matters.
+#While using a function, remember that the argument of the function, if any, must be enclosed within parentheses:(input). If no input is required for a particular function, just put (). like newline(). See examples ahead.
+#You have read till now about values, variables, operators, and functions. The following is some basic code to use these concepts. 
+#print_fn: prints a value in the output screen. For eg:
+print("5")
+print(5)
+x=8
+print(x)
+print("Hi","There")#Prints with comma as an indent
+print("Hi"+"There")#Prints with no indentation, also the values should have the same type.
+print(4,"hi")
+print(str(4)+" hi")#Note the extra indent in the string
+#String Operations
+print("Add\"This") #To add "" in strings
+print("Hi\nBye")#To press enter in the output
+print("Hi\tthere")#tab
+str1="Hi There!"
+     #012345678
+str2=", Bye"
+print(str1.lower())# 3 and 4 lines for showing a function which makes all letters lowercase
+print(str1.upper())# same case as above, but uppercase
+print(str1.islower())#checks if string is all lowercase, gives True or False
+print(str1.isupper())#same for uppercase
+print(str1.upper().isupper())#See how composition works here, and how this function will always produce a True value
+print(len(str1))#For length of string
+print(str1[0])#To print a character from a string. Numbering starts from 0, not 1.
+print(str1[-2])
+print(str1.index("H"))#To tell us the index of a character. Gives smallest output if more than one occurence
+print(str1.index("e"))
+print(str1.replace("e","j"))#To replace something(Characters or Words)(replace"this"with"that").Replaces all occurences
+print(str1+str2)#String concatenation: Appending one string to the other.
+print(str2*3)#'Multiplies' the string, makes it concatenate by repeating itself.
+#Number operations
+x=-5
+y=2
+z=-4.675
+print(abs(x))#prints absolute value
+print(pow(x,y))# x raised to y
+print(max(1,3,x,y))#Normal max and min functions
+print(min(1,3,x,y))
+print(round(z))
+print(round(-4.5))
+print(round(4.5))
+#As an exercise, write a single string that
+#produces
+#       this
+#
+#                      output.
+#type_fn: tells us the type of value of the argument. Although you have to print the type fn to see an output. For eg:
+type(4) #produces no output
+print(type("4")) #shows an output
+#id_fn:tells us the unique identity number associated with any value. For eg:
+id(9) #shows no output
+print(id(4))#shows some output
+#The next three functions are related. 1)int_fn:converts a value to int type, if possible.
+                                      #2)str_fn:converts a value to str type, if possible.
+                                      #3)float_fn:converts a value to float type, if possible.
+print(type(int("4")))#Trivial example, although this function is useful as shown in examples ahead.
+#Emphasis on the "if possible" in the def, program spews and error if conversion is not possible.
+#For eg: print(type(int("Hello World!")))
+#For the next functions, understand what a "module" is.
+#def_module: A collection of related functions. If we want to use any of the functions in a module, we must import it. Practically this means to write a line of code: import module_name.
+#The following math module has all the familiar math functions(Trigo, exp, log, etc.)
+import math
+print(math.log(9,3)) #(a,b)==log of 9 to the base 3
+                    #Note the name of the function: module_name.function
+x=math.pi/4
+print(math.cos(x+math.pi/4))#This example shows composition of functions and how pi is a part of the math module.
+print(22/7==math.pi)#prints the boolean value 'False'.
+y=math.exp(math.log(2,math.e))
+print(y)
+#def_def: Allows us to create new functions. Basic format: def function_name(Parameters):
+                                                         #     Rules/Commands for function
+                                                         #Rest of code which is not part of function defintion.
+                                                         #Note the indentation(space) before writng the rules. This is necesaary to distinguish between what is part of function and what is not. See examples ahead.
+#An example of def:
+def newline(): #The parentheses are empty, implying ki there is no need for an input. Name functions the same way you name variables.
+    print()   #This line basically says "print an empty line when this function is called"
+#How do you use a function you have created? You call it as shown:
+print("See you after 3 lines!")
+newline() #Write the name of the function to call it, and put in inputs if required.
+newline()
+newline()
+print("Hi there!")
+def threeline():
+    newline()
+    newline()
+    newline()
+print("See how you can put in another function in the rules while defining your own function :)")
+threeline()
+print("Hello!")
+#Another example to show how you can use parameters.
+def add(a,b):  # a and b are the parameters here.
+    print(a+b) 
+add(3,5)
+#Create a function which adds two strings. 
+#Line of Execution: imagine a baby reading your program. The line of execution is the way a baby would, really slowly, understand and execute the tasks given to it by your program.
+#Refer to Textbook to understand more on line of execution, and its examples.
+#if+elif+else statements: Format: if CONDITION:
+                               #      COMMAND
+                               #  elif CONDITION:    
+                               #        COMMAND
+                               #  else:
+                               #      COMMAND
+                               #Things to note: Must start with an if, can have an arbitrary number of elif, must end with an else. All if, elif, else statements end with a : . Program looks if the subject satisfies the first(if) condition, then the 2nd, then 3rd and so on. It looks for the else condition at the very last.
+#An example:
+x=4
+if x>0:
+    print("x is positive")
+elif x==0:                      #Note the use of == instead of =
+    print("x is 0")   
+else:
+    print("x is negative")
+#You can use and, or and not in conditional staements, with their usual meanings in mathematics(Set Theory)
+x=8
+if x>=0 and x<=0:
+    print("x is 0")
+else:
+    print("x is not 0")
+y=0
+if y>=0 and y<=0:
+    print("y is 0")
+else:
+    print("y is not 0")
+#Example to combine def and conditional statements.
+def zerofinder(x):
+    if x==0:
+        print(x,"is zero")
+    else:
+        print(x,"is not zero")
+zerofinder(2)
+zerofinder(0)
+#A function to determine odd or even
+def par(x): #Parity of x
+    if x%2==0:
+        print(x,"is even")
+    else:
+        print(x,"is odd")
+par(-5)
+par(2)
+par(0)
+def comp(x,y):
+    if x==y:
+        print(x,"is equal to",y)
+    elif x>y:
+        print(x,"is greater than",y)
+    else:
+        print(x,"is less than",y)
+comp(6,4)
+comp(4,6)
+comp(3,3)
+comp(-2,-6)
+#Nested conditional as an alternative to elif blocks. Read 4.7. Not used often as is complicated.
+def comp2(z,w):
+    if z==w:
+        print(z,"is equal to",w)
+    else:
+        if z>w:
+            print(z,"is greater than",w)
+        else:
+            print(z,"is less than",w)
+comp2(4,6)
+comp2(6,4)
+comp2(3,3)
+comp2(-2,-6)
+#def_recursion:Recursive pattern similar to sequences in mathematics. A countdown function example:
+def countdown(n):
+    if n==0:
+        print("Blastoff!")
+    else: 
+        print(n)
+        countdown(n-1)
+countdown(3)
+#Another recursive function:
+def nLines(m):
+    if m>0:
+        print()
+        nLines(m-1)
+print("Hi! See You After 5 Lines.")
+nLines(5)
+print(":)")
+#An infinite recursive pattern spews an error. Two examples:
+def recurse():
+    recurse()
+def curse(x):
+    if x==1:
+        print(0)
+        print(curse(0))
+    elif x==0:
+        print(1)
+        print(curse(1))
+    else:
+        print("Error")
+curse(4)  #Try curse(0)
+#def_input: Some information that the user inputs, instead of us, the programmer. Format: x=input("prompt"), where x stores the input from the user as a string.
+#Imagine you want to build a calculator, which takes in 2 numbers as an input from the user, and adds them, and prints the result. You can't mathematically add two strings, what would you do?
+#Create a function which asks for your name and wishes you happy birthday.
+prompt="Please tell your name\n" 
+name=input(prompt)   
+print("Hi",name,"! How are You?, 0 for Fine and 1 for Not Fine")
+def sack():
+  prompt1="Type your answer!\n"
+  name2=input(prompt1)
+  num=float(name2)
+  if num==0:
+      print("Well, I am glad to hear that!")
+  elif num==1:
+      print("Cheer Up Please!")
+  else:
+      print("Please type a proper answer")
+      sack()
+sack()
+#Why is the above program incorrect? works perfectly if int is replaced by float
+#A program to measure distance between two points.
+prompt1="Enter x1; x-coordinate of first point\n"
+x1=float(input(prompt1))
+prompt2="Enter y1; y-coordinate of first point\n"
+y1=float(input(prompt2))
+prompt3="Enter x2; x-coordinate of second point\n"
+x2=float(input(prompt3))
+prompt4="Enter y2; y-coordinate of second point\n"
+y2=float(input(prompt4))
+z=(x1-x2)**2+(y1-y2)**2
+print(z**0.5)
+#A nice example of recursion where program never stops asking.
+#How do I stop error if user inputs a letter
+import math
+def sin(x):
+    print(math.sin(x))
+def ask():
+    prompt="Enter a number!\n"
+    y=float(input(prompt))
+    sin(y)
+ask()
+#Create a function which asks the user for 3 numbers, and spews the biggest number out of them. 
+#Creating a calculator for +-*/
+def calc():
+    x=float(input("Please enter first number\n"))
+    y=input("Please type operator\n")
+    z=float(input("Please enter second number\n"))
+    if y=="+":
+        print("Your answer is",x+z)
+    elif y=="-":
+        print("Your answer is",x-z)
+    elif y=="*":
+        print("Your answer is",x*z)
+    elif z==0:
+        print("You cannot divide by zero")
+        calc()
+    elif y=="/":
+        print("Your answer is",x/z)
+    else:
+        print("Please understand that this calculator only does +-*/ :)")
+calc()
+
+    
+
+ 
+
+
+
+
+
